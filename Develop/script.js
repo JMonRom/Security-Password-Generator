@@ -66,6 +66,69 @@ function generatePassword() {
   } else if (useLower && useUpper && useNumeric && useSpecialCharacters) {
       userSelections = lowerCase.concat(upperCase, numbers, symbols);
       console.log(userSelections);
+
+  // If only 3 character types picked
+  } else if (useLower && useUpper && useNumeric) {
+    userSelections = lowerCase.concat(upperCase, numbers);
+    console.log(userSelections);
+  
+  } else if (useLower && useUpper && useSpecialCharacters) {
+    userSelections = lowerCase.concat(upperCase, symbols);
+    console.log(userSelections);
+  
+  } else if (useLower && useNumeric && useSpecialCharacters ) {
+      userSelections = lowerCase.concat(numbers, symbols);
+      console.log(userSelections);
+
+  } else if (useUpper && useNumeric && useSpecialCharacters) {
+    userSelections = upperCase.concat(numbers, symbols);
+    console.log(userSelections);
   }
 
+  // If only 2 character types selected
+  else if (useLower && useUpper) {
+    userSelections = lowerCase.concat(upperCase);
+    console.log(userSelections);
+  }
+
+  else if (useLower && useNumeric) {
+    userSelections = lowerCase.concat(numbers);
+    console.log(userSelections);
+  }
+
+  else if (useLower && useSpecialCharacters) {
+    userSelections = lowerCase.concat(symbols);
+    console.log(userSelections);
+  }
+
+  else if (useUpper && useNumeric) {
+    userSelections = upperCase.concat(numbers);
+    console.log(userSelections);
+  }
+
+  else if (useUpper && useSpecialCharacters) {
+    userSelections = upperCase.concat(symbols);
+    console.log(userSelections);
+  }
+
+  // If only 1 character type selected
+  else if (useLower) {
+    userSelections = lowerCase
+    console.log(userSelections);
+  }
+
+  else if (useUpper) {
+    userSelections = upperCase
+    console.log(userSelections);
+  }
+
+  else if (useNumeric) {
+    userSelections = numbers
+    console.log(userSelections);
+  }
+
+  else if (useSpecialCharacters) {
+    userSelections = symbols
+    console.log(userSelections);
+  }
 }
