@@ -2,6 +2,8 @@
 var generateBtn = document.querySelector("#generate");
 
 // Arrays for lowercase, uppercase, numbers and special characters
+// Can code be made cleaner?  REVIEW AND FIX
+
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
@@ -18,15 +20,12 @@ var useNumeric;
 var useSpecialCharacters;
 var userSelections;
 
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
@@ -48,13 +47,13 @@ function generatePassword() {
   
   // Logs whether true or false depending on user selection for character types
   } else {
-    useLower = confirm('Do you want to use lower case letters?');
+    useLower = confirm('Do you want to include lower case letters?');
       console.log('Use lower case: ' + useLower)
-    useUpper = confirm('Do you want to use upper case letters?')
+    useUpper = confirm('Do you want to use upper include letters?')
       console.log('Use upper case: ' + useUpper)
-    useNumeric = confirm('Do you want to use numeric values?')
+    useNumeric = confirm('Do you want to include numeric values?')
       console.log('Use numbers: ' + useNumeric)
-    useSpecialCharacters = confirm('Do you want to use special characters?')
+    useSpecialCharacters = confirm('Do you want to include special characters?')
       console.log('Use special characters: ' + useSpecialCharacters)
   };
 
@@ -131,4 +130,21 @@ function generatePassword() {
     userSelections = symbols
     console.log(userSelections);
   }
+
+  var randomPasswordCreated = [];
+
+  // Loop for random password selection 
+  for (let i = 0; i < passwordLength; i++) {
+    var choicesPicked = userSelections[Math.floor(Math.random() * userSelections.length)]
+    // push needed to add elements to array to return new array for choices that were picked
+    randomPasswordCreated.push(choicesPicked)
+    console.log(choicesPicked);
+  }
+
+  // concatenates the password that was generated with no spaces
+  password = randomPasswordCreated.join('');
+  console.log('Your Password: ' + password);
+  // Displays password on screen in box area
+  return (password);
+
 }
