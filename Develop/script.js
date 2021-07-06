@@ -2,7 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 // Arrays for lowercase, uppercase, numbers and special characters
-// Can code be made cleaner?  REVIEW AND FIX
 
 var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -141,7 +140,7 @@ function generatePassword() {
     console.log(choicesPicked);
   }
 
-  // concatenates the password that was generated with no spaces
+  // joins together the password that was generated with no spaces
   password = randomPasswordCreated.join('');
   console.log('Your Password: ' + password);
   // Displays password on screen in box area
