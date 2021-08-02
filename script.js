@@ -33,7 +33,7 @@ generateBtn.addEventListener("click", writePassword);
 // Starts the function to prompt first question for password length
 function generatePassword() {
   passwordLength = prompt('How many characters would you like your password to be? Must be between 8 and 128 charcters.');
-  console.log('Password Length: ' + passwordLength)
+  // console.log('Password Length: ' + passwordLength)
 
 // Returns a message if the pop up is cancelled
   if(!passwordLength) {
